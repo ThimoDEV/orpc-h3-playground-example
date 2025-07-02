@@ -1,0 +1,52 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "web: namyca",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "bun run dev",
+      "cwd": "${workspaceFolder}/apps/web",
+      "outputCapture": "std"
+    },
+    {
+      "name": "server: namyca",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/apps/server/src/index.ts",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "tsx",
+      "runtimeArgs": [
+        "watch",
+        "${workspaceFolder}/apps/server/src/index.ts"
+      ],
+      "cwd": "${workspaceFolder}/apps/server",
+      "envFile": "${workspaceFolder}/apps/server/.env",
+      "console": "integratedTerminal",
+      "restart": true
+    },
+    {
+      "sourceMaps": true,
+      "name": "client: chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/apps/web",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ],
+      "trace": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "fullstack Namyca",
+      "configurations": [
+        "server: namyca",
+        "web: namyca",
+        "client: chrome"
+      ]
+    }
+  ]
+}

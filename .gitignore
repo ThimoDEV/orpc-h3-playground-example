@@ -1,0 +1,41 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+*.db
+
+# Editor directories and files
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.turbo
+convex/_generated/*
+.tanstack-start/*
+.nitro/*
+.netlify/*
+.vercel
+.output
+
+# Env files
+.env
+.env.*
+
+# Content Collections generated files
+.content-collections
+
+# Visualise bundle
+bundleStats.html
